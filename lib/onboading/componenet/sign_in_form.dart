@@ -89,112 +89,188 @@ class _SignInFormState extends State<SignInForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Form(
-          key: _formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                "Email",
-                style: TextStyle(
-                  color: Colors.black54,
+    return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
+      child: Stack(
+        children: [
+          Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  "Email",
+                  style: TextStyle(
+                    color: Colors.black54,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8, bottom: 16),
-                child: TextFormField(
-                  controller: emailController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "";
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                      // prefixIcon: Padding(
-                      //   padding: const EdgeInsets.symmetric(horizontal: 8),
-                      //   child: SvgPicture.asset("assets/icons/email.svg"),
-                      // ),
-                      ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8, bottom: 16),
+                  child: TextFormField(
+                    controller: emailController,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "";
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                        // prefixIcon: Padding(
+                        //   padding: const EdgeInsets.symmetric(horizontal: 8),
+                        //   child: SvgPicture.asset("assets/icons/email.svg"),
+                        // ),
+                        ),
+                  ),
                 ),
-              ),
-              const Text(
-                "Password",
-                style: TextStyle(
-                  color: Colors.black54,
+                const Text(
+                  "Password",
+                  style: TextStyle(
+                    color: Colors.black54,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8, bottom: 16),
-                child: TextFormField(
-                  controller: passController,
-                  obscureText: true,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "";
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                      // prefixIcon: Padding(
-                      //   padding: const EdgeInsets.symmetric(horizontal: 8),
-                      //   child: SvgPicture.asset("assets/icons/password.svg"),
-                      // ),
-                      ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8, bottom: 16),
+                  child: TextFormField(
+                    controller: passController,
+                    obscureText: true,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "";
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                        // prefixIcon: Padding(
+                        //   padding: const EdgeInsets.symmetric(horizontal: 8),
+                        //   child: SvgPicture.asset("assets/icons/password.svg"),
+                        // ),
+                        ),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8, bottom: 24),
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    fast();
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFF77D8E),
-                    minimumSize: const Size(double.infinity, 56),
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(25),
-                        bottomRight: Radius.circular(25),
-                        bottomLeft: Radius.circular(25),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8, bottom: 24),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      fast();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 53, 47, 48),
+                      minimumSize: const Size(double.infinity, 56),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(25),
+                          bottomRight: Radius.circular(25),
+                          bottomLeft: Radius.circular(25),
+                        ),
                       ),
                     ),
+                    child: const Text(
+                      "Sign In",
+                      style: TextStyle(fontSize: 18),
+                    ),
                   ),
-                  icon: const Icon(
-                    CupertinoIcons.arrow_right,
-                    color: Color(0xFFFE0037),
-                  ),
-                  label: const Text("Sign In"),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 68,
+                      width: 84,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Color(0xff2F2F2F).withOpacity(0.2),
+                        ),
+                        color: Color(0xffF2F2F2).withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/google.png',
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 16),
+                      height: 68,
+                      width: 84,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Color(0xff2F2F2F).withOpacity(0.2),
+                        ),
+                        color: Color(0xffF2F2F2).withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/apple.png',
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 16),
+                      height: 68,
+                      width: 84,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Color(0xff2F2F2F).withOpacity(0.2),
+                        ),
+                        color: Color(0xffF2F2F2).withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/facebook.png',
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 58),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Already have an account? ',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w500),
+                      ),
+                      Text(
+                        'Log in',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w800),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          Visibility(
+            visible: isShowLoading,
+            child: const CustomPositioned(
+              scale: 1.5,
+              child: RiveAnimation.asset(
+                'assets/rive/correct1.riv',
+                fit: BoxFit.cover,
+                //onInit: _onCheckRiveInit,
               ),
-            ],
-          ),
-        ),
-        Visibility(
-          visible: isShowLoading,
-          child: CustomPositioned(
-            child: RiveAnimation.asset(
-              'assets/rive/correct.riv',
-              fit: BoxFit.cover,
-              //onInit: _onCheckRiveInit,
             ),
           ),
-        ),
-        Visibility(
-          visible: isShowConfetti,
-          child: CustomPositioned(
-            scale: 6,
-            child: RiveAnimation.asset(
-              "assets/rive/wrong1.riv",
-              //onInit: _onConfettiRiveInit,
-              fit: BoxFit.cover,
+          Visibility(
+            visible: isShowConfetti,
+            child: const CustomPositioned(
+              scale: 6,
+              child: RiveAnimation.asset(
+                "assets/rive/wrong1.riv",
+                //onInit: _onConfettiRiveInit,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 
