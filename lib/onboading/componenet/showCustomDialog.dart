@@ -1,3 +1,4 @@
+import 'package:animation_flutter/onboading/componenet/sign_in_form.dart';
 import 'package:flutter/material.dart';
 
 void showCustomDialog(BuildContext context, {required ValueChanged onValue}) {
@@ -51,7 +52,7 @@ void showCustomDialog(BuildContext context, {required ValueChanged onValue}) {
                 //         textAlign: TextAlign.center,
                 //       ),
                 //     ),
-                //     //const SignInForm(),
+                const SignInForm(),
                 //     Row(
                 //       children: const [
                 //         Expanded(

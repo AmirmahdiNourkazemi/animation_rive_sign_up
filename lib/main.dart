@@ -1,18 +1,14 @@
 import 'dart:ui';
 
-import 'package:animation_flutter/componenet/AnimatedBtn.dart';
+import 'package:animation_flutter/onboading/componenet/AnimatedBtn.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
-import 'componenet/showCustomDialog.dart';
+import 'onboading/componenet/showCustomDialog.dart';
 
 void main() {
   runApp(MaterialApp(home: const OnbodingScreen()));
 }
-
-
-
-
 
 class OnbodingScreen extends StatefulWidget {
   const OnbodingScreen({super.key});
@@ -40,14 +36,6 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          // Positioned(
-          //   width: MediaQuery.of(context).size.width * 1.7,
-          //   left: 100,
-          //   bottom: 100,
-          //   child: Image.asset(
-          //     "assets/Backgrounds/Spline.png",
-          //   ),
-          // ),
           Positioned.fill(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
@@ -77,18 +65,18 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     const Spacer(),
-                   const SizedBox(
+                    const SizedBox(
                       width: 300,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children:  [
+                        children: [
                           Text(
                             "Amirfluts using Rive package",
                             style: TextStyle(
                               fontSize: 60,
                               fontWeight: FontWeight.w700,
-                            color: Colors.white,
+                              color: Colors.white,
                               height: 1.2,
                             ),
                           ),
@@ -114,7 +102,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
 
                         Future.delayed(
                           const Duration(milliseconds: 800),
-                              () {
+                          () {
                             setState(() {
                               isShowSignInDialog = true;
                             });
@@ -130,7 +118,6 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                         );
                       },
                     ),
-
                   ],
                 ),
               ),
